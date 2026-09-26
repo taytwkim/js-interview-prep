@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lunch Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Lunch Finder</h1>
+      <p>Find something to eat from today's café menu.</p>
+
+      <div class="filters">
+        <label for="search">Search dishes</label>
+        <input id="search" type="search" placeholder="e.g. wrap" value="">
+
+        <label for="max-price">Maximum price</label>
+        <select id="max-price">
+          <option value="all" selected>Any price</option>
+          <option value="8">$8</option>
+          <option value="10">$10</option>
+          <option value="12">$12</option>
+        </select>
+
+        <label for="availability">Availability</label>
+        <select id="availability">
+          <option value="all" selected>Any availability</option>
+          <option value="available">Available now</option>
+        </select>
+
+        <button id="clear-filters" type="button">Clear filters</button>
+      </div>
+
+      <p role="status">Dishes found: <strong id="result-count">0</strong></p>
+      <ul id="menu-list"></ul>
+      <p id="empty-message" hidden>No dishes match your filters.</p>
+    </main>
+  </body>
+</html>

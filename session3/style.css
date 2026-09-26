@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px 20px; background: #f1f4f8; color: #243449; font: 15px/1.5 Arial, sans-serif; }
+main { max-width: 1300px; margin: auto; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 0; }
+h2 { font-size: 20px; }
+.page-header, .toolbar, .editor-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.page-header { justify-content: space-between; margin-bottom: 24px; }
+.eyebrow { color: #596b82; font-size: 12px; letter-spacing: 1px; margin-bottom: 4px; }
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.metrics > div, .panel { background: white; border: 1px solid #d8e0ea; border-radius: 8px; padding: 20px; }
+.metrics strong { display: block; font-size: 28px; }
+.workspace { display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: start; gap: 20px; }
+.filters { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
+.filters label { flex: 1 1 130px; }
+label { display: block; font-weight: bold; font-size: 13px; }
+input, select, button { font: inherit; padding: 9px; border: 1px solid #8797ac; border-radius: 4px; }
+input, select { width: 100%; background: white; color: #243449; }
+label input, label select { display: block; margin-top: 5px; }
+button { background: #2853a2; color: white; cursor: pointer; }
+button.secondary { background: white; color: #2853a2; }
+button:disabled { opacity: 0.5; cursor: default; }
+:focus-visible { outline: 3px solid #a86500; outline-offset: 2px; }
+.toolbar { margin: 20px 0 12px; font-size: 13px; }
+.toolbar button { margin-left: auto; }
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th { font-size: 12px; color: #596b82; }
+td, th { padding: 12px 8px; border-bottom: 1px solid #e3e8ef; vertical-align: middle; }
+td input[type="checkbox"] { width: auto; }
+.ticket-title { min-width: 160px; overflow-wrap: anywhere; }
+.ticket-id { display: block; color: #596b82; font-size: 12px; }
+tr.selected { background: #edf3ff; }
+#ticket-form > input, #ticket-form > select { margin: 5px 0 16px; }
+#editor-message { color: #a32c2c; }
+#app-message, .footnote { color: #596b82; font-size: 13px; }
+#app-message:empty, #editor-message:empty { display: none; }
+#empty-message { margin-top: 20px; }
+.footnote { margin-top: 20px; }
+@media (max-width: 950px) { .workspace { grid-template-columns: 1fr; } }
+@media (max-width: 500px) { .metrics { grid-template-columns: repeat(2, 1fr); } body { padding: 16px 10px; } }

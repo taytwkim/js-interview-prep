@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support Queue</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/view.js" defer></script>
+  <script src="js/editor.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">CUSTOMER OPERATIONS</p><h1>Support Queue</h1></div>
+      <button id="new-ticket" type="button">New ticket</button>
+    </header>
+
+    <section class="metrics" aria-label="Queue totals">
+      <div>Total<strong id="total-count">0</strong></div>
+      <div>Open<strong id="open-count">0</strong></div>
+      <div>In progress<strong id="progress-count">0</strong></div>
+      <div>Closed<strong id="closed-count">0</strong></div>
+    </section>
+
+    <div class="workspace">
+      <section class="panel" aria-label="Ticket queue">
+        <div class="filters">
+          <label>Search<input id="search" type="search" placeholder="Title or customer"></label>
+          <label>Status<select id="status-filter"><option value="all">All statuses</option><option value="open">Open</option><option value="progress">In progress</option><option value="closed">Closed</option></select></label>
+          <label>Priority<select id="priority-filter"><option value="all">All priorities</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></label>
+          <label>Sort<select id="sort"><option value="oldest">Oldest ID first</option><option value="newest">Newest ID first</option><option value="priority">Priority</option></select></label>
+          <button id="clear-filters" class="secondary" type="button">Clear filters</button>
+        </div>
+
+        <div class="toolbar">
+          <span>Visible tickets: <strong id="visible-count">0</strong></span>
+          <span>Selected: <strong id="selected-count">0</strong></span>
+          <button id="close-selected" type="button" disabled>Close selected</button>
+        </div>
+        <p id="app-message" role="status"></p>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th scope="col">Select</th><th scope="col">Ticket</th><th scope="col">Customer</th><th scope="col">Priority</th><th scope="col">Status</th><th scope="col">Action</th></tr></thead>
+            <tbody id="ticket-rows"></tbody>
+          </table>
+        </div>
+        <p id="empty-message" hidden>No tickets match your filters.</p>
+      </section>
+
+      <aside class="panel editor-panel" aria-label="Ticket editor">
+        <p id="editor-placeholder">Open a ticket to inspect it, or create a new one.</p>
+        <form id="ticket-form" hidden novalidate>
+          <h2 id="editor-heading">Ticket</h2>
+          <label for="edit-title">Title</label>
+          <input id="edit-title" type="text" required>
+          <label for="edit-customer">Customer</label>
+          <input id="edit-customer" type="text" required>
+          <label for="edit-priority">Priority</label>
+          <select id="edit-priority"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+          <label for="edit-status">Status</label>
+          <select id="edit-status"><option value="open">Open</option><option value="progress">In progress</option><option value="closed">Closed</option></select>
+          <p id="editor-message" role="alert"></p>
+          <div class="editor-actions"><button type="submit">Save</button><button id="cancel-edit" class="secondary" type="button">Cancel</button></div>
+        </form>
+      </aside>
+    </div>
+    <p class="footnote">Practice workspace · Data resets when the page reloads.</p>
+  </main>
+</body>
+</html>

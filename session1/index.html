@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Shopping List</h1>
+      <p>Add what you need and check it off as you shop.</p>
+
+      <form id="item-form">
+        <label for="item-name">Item name</label>
+        <input id="item-name" type="text" required>
+
+        <label for="item-quantity">Quantity</label>
+        <input id="item-quantity" type="number" min="1" step="1" value="1" required>
+
+        <button type="submit">Add item</button>
+      </form>
+
+      <p id="form-message" role="status"></p>
+
+      <label class="filter">
+        <input id="remaining-only" type="checkbox">
+        Show only items still to buy
+      </label>
+
+      <ul id="shopping-list"></ul>
+      
+      <p id="empty-message" hidden>No items to show.</p>
+      <p class="summary">Total quantity: <strong id="total-quantity">0</strong></p>
+    </main>
+  </body>
+</html>
