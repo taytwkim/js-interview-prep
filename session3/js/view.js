@@ -69,7 +69,7 @@ QueueApp.render = function () {
     openButton.textContent = "Open";
     openButton.setAttribute("aria-label", "Open ticket " + ticket.id);
     openButton.addEventListener("click", function () {
-      QueueApp.openEditor(index + 1);
+      QueueApp.openEditor(ticket.id);
     });
     actionCell.append(openButton);
     row.append(selectionCell, titleCell, customerCell, priorityCell, statusCell, actionCell);

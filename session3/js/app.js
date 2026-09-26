@@ -28,8 +28,7 @@ document.querySelector("#new-ticket").addEventListener("click", function () {
 
 document.querySelector("#close-selected").addEventListener("click", function () {
   if (QueueApp.state.draft || QueueApp.state.selectedIds.length === 0) return;
-  const ids = QueueApp.getVisibleTickets().map(function (ticket) { return ticket.id; });
-  const changed = QueueApp.closeTickets(ids);
+  const changed = QueueApp.closeTickets(QueueApp.state.selectedIds);
   document.querySelector("#app-message").textContent = changed + " ticket(s) closed.";
   QueueApp.render();
 });

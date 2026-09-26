@@ -23,7 +23,7 @@ QueueApp.beginDraft = function (id) {
   if (id === null) {
     QueueApp.state.draft = { id: null, title: "", customer: "", priority: "medium", status: "open" };
   } else {
-    QueueApp.state.draft = QueueApp.findTicket(id);
+    QueueApp.state.draft = { ...QueueApp.findTicket(id) };
   }
 };
 

@@ -40,7 +40,7 @@ Scripts run in the order listed in `index.html`. They share one object named `Qu
 - Open, In progress, and Closed are the only statuses. High, Medium, and Low are the only priorities.
 - Opening a row must show that exact ticket in the editor, regardless of search, filtering, or sorting.
 - Existing-ticket edits are drafts. Save validates and commits the draft. Cancel discards every unsaved change. Switching to another ticket or clicking New ticket also discards the previous unsaved draft.
-- New tickets need a nonblank title and customer. Save trims outer whitespace and assigns a unique ID. Invalid saves leave the editor open and do not change the queue.
+- New tickets need a non-blank title and customer. Save trims outer whitespace and assigns a unique ID. Invalid saves leave the editor open and do not change the queue.
 - Each checkbox selects its ticket. Selection remains attached to the same ticket across sorting, and remains selected even when a filter hides that ticket.
 - “Close selected” closes **only checked tickets**, including checked tickets hidden by filters. It preserves other fields, clears selection afterward, and is disabled when nothing is selected or while the editor is open.
 - “Clear filters” resets search, status, priority, and sort. It preserves tickets and selection.
