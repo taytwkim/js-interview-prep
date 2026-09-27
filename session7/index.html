@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">PEOPLE OPERATIONS</p><h1>Team Directory</h1><p>Find a colleague across your organization.</p></div><button id="reset" type="button">Reset example</button></header>
+    <section class="panel" aria-label="Directory">
+      <div class="filters">
+        <label>Search<input id="search" type="search" placeholder="Name or email" autocomplete="off"></label>
+        <label>Team<select id="team"><option value="all">All teams</option><option value="Engineering">Engineering</option><option value="Design">Design</option><option value="Sales">Sales</option><option value="Support">Support</option></select></label>
+        <label>Sort<select id="sort"><option value="asc">Name A–Z</option><option value="desc">Name Z–A</option></select></label>
+      </div>
+      <p class="results" role="status"><strong id="match-count">0</strong> people found</p>
+      <div class="table-wrapper"><table><thead><tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Team</th><th scope="col">Location</th></tr></thead><tbody id="people-rows"></tbody></table></div>
+      <p id="empty-message" hidden>No people match your filters.</p>
+      <div class="pagination"><span id="range"></span><div class="page-controls"><button id="previous" type="button">Previous</button><span id="page-label"></span><button id="next" type="button">Next</button></div></div>
+    </section>
+    <footer>Practice directory · Fictional records · No external requests</footer>
+  </main>
+</body>
+</html>

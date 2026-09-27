@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Training Order Review</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">TEAM LEARNING</p><h1>Training Order Review</h1><p>Review reservations and the amount due before checkout.</p></div><button id="reset" type="button" class="secondary">Reset example</button></header>
+    
+    <div class="workspace">
+      <section class="panel" aria-labelledby="reservations-heading">
+        <div class="toolbar"><h2 id="reservations-heading">Reservations</h2><label for="status-filter">Show<select id="status-filter"><option value="all">All reservations</option><option value="active">Active only</option><option value="cancelled">Canceled only</option></select></label></div>
+        <p id="message" role="status"></p>
+        <div class="table-wrapper"><table><thead><tr><th scope="col">Workshop</th><th scope="col">Per seat</th><th scope="col">Seats</th><th scope="col">Status</th><th scope="col">Action</th></tr></thead><tbody id="reservation-rows"></tbody></table></div>
+        <p id="empty-message" hidden>No reservations match this filter.</p>
+      </section>
+      
+      <aside class="panel" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Order summary</h2>
+        <dl><div><dt>Active seats</dt><dd id="active-seats">0</dd></div><div><dt>Subtotal</dt><dd id="subtotal">$0.00</dd></div><div><dt>Group discount</dt><dd id="discount">$0.00</dd></div><div class="amount"><dt>Amount due</dt><dd id="amount-due">$0.00</dd></div></dl>
+        <p class="policy">Orders with 5 or more active seats receive 10% off. Canceled reservations do not count.</p>
+      </aside>
+    </div>
+    <footer>Practice order · No real bookings or payments · Refresh resets the data</footer>
+  </main>
+</body>
+</html>
