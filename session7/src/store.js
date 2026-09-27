@@ -9,7 +9,7 @@ export function getState() {
 }
 
 export function updateFilters(filters) {
-  state = { ...state, ...filters };
+  state = { ...state, ...filters, page: 1 };
 }
 
 export function movePage(change, pageCount) {

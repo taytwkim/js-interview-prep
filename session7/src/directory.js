@@ -1,5 +1,6 @@
 export function getDirectoryPage(people, state) {
   const query = state.query.trim().toLowerCase();
+
   const matches = people.filter(function (person) {
     const matchesQuery = person.name.toLowerCase().includes(query) || person.email.toLowerCase().includes(query);
     const matchesTeam = state.team === "all" || person.team === state.team;
