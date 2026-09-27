@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Handoff Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">TEAM OPERATIONS</p><h1>Client Handoff Board</h1><p>Prepare the checklist, review the brief, and record handoff notes.</p></header>
+    <div class="workspace">
+      <nav class="panel" aria-label="Clients"><h2>Clients</h2><div id="client-list"></div></nav>
+      
+      <div class="content">
+        <section class="panel" aria-labelledby="client-name">
+          <h2 id="client-name"></h2>
+          <div id="brief" aria-live="polite"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="checklist-heading">
+          <div class="section-heading"><h2 id="checklist-heading">Readiness checklist</h2><button id="edit-checklist" type="button">Edit checklist</button></div>
+          <p id="checklist-summary"></p>
+          <ul id="saved-checklist"></ul>
+          <form id="checklist-form" class="editor" hidden>
+            <h3>Edit checklist</h3>
+            <div id="draft-checklist"></div>
+            <div class="actions"><button type="submit">Save checklist</button><button id="cancel-checklist" type="button" class="secondary">Cancel</button></div>
+          </form>
+        </section>
+
+        <section class="panel" aria-labelledby="notes-heading">
+          <div class="section-heading"><h2 id="notes-heading">Activity notes</h2><button id="add-note" type="button">Add note</button></div>
+          <p id="note-count" role="status"></p>
+          <p id="notes-empty">No notes for this client yet.</p>
+          <ul id="notes-list"></ul>
+          <form id="note-form" class="editor" hidden novalidate>
+            <label for="note-text">New note</label>
+            <textarea id="note-text" rows="3" required></textarea>
+            <p id="note-error" role="alert"></p>
+            <div class="actions"><button type="submit">Save note</button><button id="cancel-note" type="button" class="secondary">Cancel</button></div>
+          </form>
+        </section>
+      </div>
+    </div>
+    <footer>Practice workspace · All changes reset on refresh</footer>
+  </main>
+</body>
+</html>
