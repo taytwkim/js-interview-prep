@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">LEARNING & DEVELOPMENT</p><h1>Workshop Planner</h1><p>Find workshops and reserve seats for your team.</p></header>
+    <div class="workspace">
+      <section class="panel" aria-labelledby="catalog-heading">
+        <h2 id="catalog-heading">Workshop catalog</h2>
+        <label for="search">Search by title</label>
+        <input id="search" type="search" placeholder="Try DOM or design" autocomplete="off">
+        <p id="search-status" role="status"></p>
+        <div id="catalog" class="catalog"></div>
+        <p id="catalog-empty" hidden>No workshops match your search.</p>
+      </section>
+      <section class="panel" aria-labelledby="plan-heading">
+        <div class="plan-header"><h2 id="plan-heading">Your plan</h2><span><strong id="seat-count">0</strong> seats</span></div>
+        <div id="plan"></div>
+        <p id="plan-empty">Your plan is empty. Add a workshop to get started.</p>
+        <div class="total"><span>Estimated total</span><strong id="plan-total">$0</strong></div>
+        <div class="actions"><button id="undo" type="button" disabled>Undo</button><button id="clear-plan" type="button" class="secondary" disabled>Clear plan</button></div>
+      </section>
+    </div>
+    <footer>Practice workspace · No real bookings or payments · Refresh resets the plan</footer>
+  </main>
+</body>
+</html>
