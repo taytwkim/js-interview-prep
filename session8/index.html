@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Review Queue</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">TEAM OPERATIONS</p><h1>Expense Review Queue</h1><p>Review employee requests and approve selected expenses.</p></div><button id="reset" type="button">Reset example</button></header>
+    <section class="panel" aria-label="Expenses">
+      <div class="filters">
+        <label>Search<input id="search" type="search" placeholder="Employee or description"></label>
+        <label>Category<select id="category"><option value="all">All categories</option><option value="Travel">Travel</option><option value="Meals">Meals</option><option value="Supplies">Supplies</option></select></label>
+        <label>Status<select id="status"><option value="all">All statuses</option><option value="pending">Pending</option><option value="approved">Approved</option></select></label>
+        <label>Sort<select id="sort"><option value="id">Request ID</option><option value="amount">Amount, highest first</option></select></label>
+      </div>
+
+      <div class="toolbar"><label class="check-label"><input id="select-visible" type="checkbox">Select all visible</label><span id="visible-count"></span></div>
+      
+      <div class="table-wrapper"><table><thead><tr><th scope="col">Select</th><th scope="col">Request</th><th scope="col">Employee</th><th scope="col">Category</th><th scope="col">Amount</th><th scope="col">Status</th></tr></thead><tbody id="request-rows"></tbody></table></div>
+      <p id="empty-message" hidden>No requests match your filters.</p>
+      
+      <div class="selection-bar"><span><strong id="selected-count">0</strong> selected · <strong id="selected-amount">$0.00</strong></span><button id="approve" type="button" disabled>Approve selected</button></div>
+      <p id="message" role="status"></p>
+    </section>
+    <footer>Practice data · No payments are made · Refresh resets all changes</footer>
+  </main>
+</body>
+</html>
